@@ -42,3 +42,7 @@ are resumable; training refuses to overwrite an existing run directory. A failed
 partial training stage currently requires a fresh output condition for retry.
 Storage is four bytes per native trained pipeline parameter; derived mesh and
 optimizer/buffers are excluded. Smoke validation must precede a frozen sweep.
+
+User override (2026-11-14): "just do it locally 4 now". LOCAL_ONLY_AUTHORIZED=1
+permits local committed pins/setup/testing while private repository creation and
+pushes are deferred. Reports must retain this local-only provenance.

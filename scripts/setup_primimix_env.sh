@@ -26,4 +26,4 @@ conda list --explicit > environment/conda-explicit.txt
 sha256sum checkpoints/* > environment/checkpoints.sha256
 nvcc --version > environment/nvcc.txt
 nvidia-smi -q > environment/nvidia-smi.txt
-python scripts/check_runtime.py > environment/runtime.json
+echo "Run scripts/check_runtime.py after acquiring the campaign GPU slot."
