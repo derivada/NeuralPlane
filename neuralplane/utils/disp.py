@@ -1,5 +1,8 @@
-from detectron2.utils.visualizer import GenericMask
-from detectron2.utils.visualizer import Visualizer
+try:
+    from detectron2.utils.visualizer import GenericMask
+    from detectron2.utils.visualizer import Visualizer
+except ImportError:   # only the optional overlay helpers need these
+    GenericMask = Visualizer = None
 from typing import Literal, Union
 from pathlib import Path
 

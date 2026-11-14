@@ -21,7 +21,7 @@ git submodule update --init --recursive
 "$ENVPY" -m pip install -e .
 "$ENVPY" -m pip install --no-build-isolation thirdparty/tiny-cuda-nn/bindings/torch
 "$ENVPY" -m pip install -e thirdparty/segment-anything -e thirdparty/Hierarchical-Localization
-"$ENVPY" -m pip install gdown==5.2.0
+"$ENVPY" -m pip install gdown==5.2.0 pycocotools
 "$ENVPY" -m neuralplane.scripts.download_models --dst checkpoints
 mkdir -p environment
 "$ENVPY" -m pip freeze > environment/pip-freeze.txt

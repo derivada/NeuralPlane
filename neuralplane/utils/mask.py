@@ -1,6 +1,16 @@
 from skimage import measure
 from typing import List
-from detectron2.structures import polygons_to_bitmask
+try:
+    from detectron2.structures import polygons_to_bitmask
+except ImportError:   # detectron2 is used here only for this helper; same implementation on pycocotools
+    import numpy as _np
+    import pycocotools.mask as _mask_util
+
+    def polygons_to_bitmask(polygons, height, width):
+        if len(polygons) == 0:
+            return _np.zeros((height, width)).astype(bool)
+        rle = _mask_util.merge(_mask_util.frPyObjects(polygons, height, width))
+        return _mask_util.decode(rle).astype(bool)
 
 import cv2
 
