@@ -13,7 +13,7 @@ import numpy as np
 class MonocularPredictorConfig(InstantiateConfig):
     _target: Type = field(default_factory=lambda: MonocularPredictor)
     """target class to instantiate"""
-    ckpt_dir: Path = Path("checkpoints")
+    ckpt_dir: Path = Path(__file__).resolve().parents[3] / "checkpoints"   # repo-root checkpoints, independent of the working directory
     "checkpoint path"
 
 class MonocularPredictor:

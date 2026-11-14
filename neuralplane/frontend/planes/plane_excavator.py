@@ -23,7 +23,7 @@ class PlaneExcavatorConfig(InstantiateConfig):
     _target: Type = field(default_factory=lambda: PlaneExcavator)
     """target class to instantiate"""
 
-    normal_predictor: MonocularPredictorConfig = field(default_factory=lambda: SNUConfig(ckpt_dir=Path("checkpoints")))
+    normal_predictor: MonocularPredictorConfig = field(default_factory=lambda: SNUConfig(ckpt_dir=Path(__file__).resolve().parents[3] / "checkpoints"))
     # normal_predictor: SurfaceNormalPredictorConfig = field(default_factory=lambda: StableNormalConfig(ckpt_dir=Path("./checkpoints")))
     "normal predictor config"
 

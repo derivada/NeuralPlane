@@ -8,7 +8,7 @@ from nerfstudio.utils.rich_utils import CONSOLE
 from neuralplane.frontend.segment import point_utils
 
 
-def setup_sam(sam_checkpoint="./checkpoints/sam_vit_h_4b8939.pth",
+def setup_sam(sam_checkpoint=str(__import__("pathlib").Path(__file__).resolve().parents[3] / "checkpoints" / "sam_vit_h_4b8939.pth"),
                device="cuda"):
 
     model_type = "vit_h"
