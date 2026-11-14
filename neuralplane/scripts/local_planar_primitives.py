@@ -8,7 +8,7 @@ from neuralplane.utils.yaml import load_yaml, update_yaml
 
 from nerfstudio.utils.rich_utils import CONSOLE, ItersPerSecColumn
 from nerfstudio.data.datamanagers.base_datamanager import VanillaDataManagerConfig
-from nerfstudio.data.dataparsers.scannet_dataparser import ScanNetDataParserConfig
+from neuralplane.benchmark_dataparser import ScanNetDataParserConfig
 from nerfstudio.data.utils.colmap_parsing_utils import (
     qvec2rotmat,
     read_images_binary,

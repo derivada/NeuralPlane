@@ -112,6 +112,15 @@ class NeuralPlaneExporter:
         pass
 
     def post_processing(self, piecewise_meshes: List[trimesh.Trimesh], file_geo_verts: Path, file_segm_label: Path) -> None:
+        if self.config.DATA.get("BENCHMARK", False):
+            # Native surface pieces; no GT coloring, transfer, sampling or registration.
+            import json
+            if not piecewise_meshes:
+                raise RuntimeError("native surface extraction produced no planes")
+            merged = trimesh.util.concatenate(piecewise_meshes)
+            merged.export(self.out_dir / "planar_mesh.ply")
+            (self.out_dir / "planes.json").write_text(json.dumps({"num_planes": len(piecewise_meshes)}))
+            return
         gt_mesh = trimesh.load(self.config.DATA.ANNOTATION / "planes_mesh_vis.ply", process=False)
         gt_labels = np.array([em[-1] for em in gt_mesh.metadata['_ply_raw']['vertex']['data']])
 

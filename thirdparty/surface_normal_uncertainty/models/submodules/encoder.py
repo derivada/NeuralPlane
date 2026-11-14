@@ -11,11 +11,10 @@ class Encoder(nn.Module):
 
         basemodel_name = 'tf_efficientnet_b5_ap'
         print('Loading base model {}...'.format(basemodel_name), end='')
-        model_cache_path = f'{os.path.expanduser("~/.cache/torch/hub/rwightman_gen-efficientnet-pytorch_master/")}'
-        if not Path(model_cache_path).exists():
-            basemodel = torch.hub.load('rwightman/gen-efficientnet-pytorch', basemodel_name, pretrained=True)
-        else:
-            basemodel = torch.hub.load(model_cache_path, basemodel_name, pretrained=True, trust_repo=True, source='local')
+        # All encoder weights are loaded strictly from the released SNU checkpoint.
+        # Pin source locally instead of executing torch.hub's changing master.
+        source = Path(__file__).resolve().parents[3] / 'gen-efficientnet-pytorch'
+        basemodel = torch.hub.load(str(source), basemodel_name, pretrained=False, source='local')
 
         print('Done.')
 

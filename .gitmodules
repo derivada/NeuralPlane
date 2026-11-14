@@ -1,0 +1,12 @@
+[submodule "thirdparty/tiny-cuda-nn"]
+	path = thirdparty/tiny-cuda-nn
+	url = https://github.com/NVlabs/tiny-cuda-nn.git
+[submodule "thirdparty/segment-anything"]
+	path = thirdparty/segment-anything
+	url = https://github.com/facebookresearch/segment-anything.git
+[submodule "thirdparty/Hierarchical-Localization"]
+	path = thirdparty/Hierarchical-Localization
+	url = https://github.com/cvg/Hierarchical-Localization.git
+[submodule "thirdparty/gen-efficientnet-pytorch"]
+	path = thirdparty/gen-efficientnet-pytorch
+	url = https://github.com/rwightman/gen-efficientnet-pytorch.git

@@ -297,7 +297,7 @@ class NeuralPlaneDataManager(VanillaDataManager):
 
 # ==============debugging================
 if __name__ == '__main__':
-    from nerfstudio.data.dataparsers.scannet_dataparser import ScanNetDataParserConfig
+    from neuralplane.benchmark_dataparser import ScanNetDataParserConfig
 
     # Init: load posed images and the plane seg cache, and init the local planar primitives
     datamanager = NeuralPlaneDataManagerConfig(

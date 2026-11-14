@@ -35,10 +35,7 @@ class NeuralPlane:
 
         out_dir = CFG.output_dir / CFG.experiment_name / "neuralplane" / CFG.timestamp
         if out_dir.exists():
-            CONSOLE.log(f"Output directory {out_dir} already exists. Remove ...")
-            import shutil
-            shutil.rmtree(out_dir)
-            CONSOLE.log(f"Output directory {out_dir} removed.")
+            raise FileExistsError(f"Refusing to overwrite native training run: {out_dir}")
 
         train(CFG)
 

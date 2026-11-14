@@ -11,7 +11,7 @@ from rich.progress import track
 
 from hloc import extract_features, pairs_from_retrieval, match_dense, triangulation
 from nerfstudio.data.datamanagers.base_datamanager import VanillaDataManagerConfig
-from nerfstudio.data.dataparsers.scannet_dataparser import ScanNetDataParserConfig
+from neuralplane.benchmark_dataparser import ScanNetDataParserConfig
 from nerfstudio.utils.rich_utils import CONSOLE
 from nerfstudio.scripts.train import _set_random_seed
 

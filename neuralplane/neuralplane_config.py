@@ -2,7 +2,7 @@ from pathlib import Path
 
 from nerfstudio.engine.trainer import TrainerConfig
 from nerfstudio.plugins.types import MethodSpecification
-from nerfstudio.data.dataparsers.scannet_dataparser import ScanNetDataParserConfig
+from neuralplane.benchmark_dataparser import ScanNetDataParserConfig
 from nerfstudio.cameras.camera_optimizers import CameraOptimizerConfig
 from nerfstudio.engine.optimizers import AdamOptimizerConfig
 from nerfstudio.engine.schedulers import ExponentialDecaySchedulerConfig

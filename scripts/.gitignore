@@ -1,1 +1,7 @@
 *.py
+!__init__.py
+!benchmark_data.py
+!benchmark_scene.py
+!require_published.py
+!check_runtime.py
+!render_benchmark.py
